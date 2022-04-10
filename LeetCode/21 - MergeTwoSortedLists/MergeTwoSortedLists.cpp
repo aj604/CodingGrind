@@ -11,11 +11,48 @@ using namespace std;
 class Solution {
 public:
     /*
+    Time - O(n) faster than 75.94%
+    Space - O(1) less than 43.8
+    */
+    ListNode* mergeTwoListsIterative(ListNode* list1, ListNode* list2){
+      if(list1 == NULL) return list2;
+      if(list2 == NULL) return list1;
+
+      ListNode* result = NULL;
+      ListNode* current = NULL;
+
+      if(list1->val < list2->val){
+        result = list1;
+        list1 = list1->next;
+      } else {
+        result = list2;
+        list2 = list2->next;
+      }
+      current = result;
+      
+      while(list1 != NULL && list2 != NULL){
+        if(list1->val <= list2->val){
+          current->next = list1;
+          list1 = list1->next;
+        }
+        else{
+          current->next = list2;
+          list2 = list2->next;
+        }
+        current = current->next;
+      }
+      if(list1 == NULL) current->next = list2;
+      if(list2 == NULL) current->next = list1;
+      
+      return result;
+    }
+
+    /*
     First Pass Solution. Needs work
-    faster than 27.16%
+    faster than 94.24%
     Less memory than 43.80%
     */
-    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2){
+    ListNode* mergeTwoListsRecursive(ListNode* list1, ListNode* list2){
       ListNode* result = NULL;
 
       if(list1 == NULL)
@@ -25,11 +62,11 @@ public:
 
       if(list1->val <= list2->val){
         result = list1;
-        result->next = mergeTwoLists(list1->next, list2);
+        result->next = mergeTwoListsRecursive(list1->next, list2);
       }
       else {
         result = list2;
-        result->next = mergeTwoLists(list1, list2->next);
+        result->next = mergeTwoListsRecursive(list1, list2->next);
       }
       return result;
     }
