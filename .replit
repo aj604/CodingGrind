@@ -1,2 +1,2 @@
 language = "bash"
-run = "make -s"
+run = "g++ ./* -o main && ./main"
