@@ -1,2 +1,2 @@
 language = "bash"
-run = "g++ ./LeetCode/53-MaximumSubarray/maxSubArray.cpp -o main && ./main"
+run = "g++ ./LeetCode/235-LowestCommonAncestor/lowestCommonAncestor.cpp -o main && ./main && rm ./main"
