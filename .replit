@@ -1,2 +1,2 @@
 language = "bash"
-run = "g++ ./LeetCode/9-PalindromeNumber/isPalindrome.cpp -o main && ./main && rm ./main"
+run = "g++ ./LeetCode/13-RomanToInteger/romanToInt.cpp -o main && ./main && rm ./main"
