@@ -1,2 +1,1 @@
-language = "bash"
-run = "g++ ./LeetCode/23-MergeKSortedLists/mergeKLists.cpp -Wall -o main && ./main && rm ./main"
+run = "python ./LeetCode/383-RansomNote/canConstruct.py"
