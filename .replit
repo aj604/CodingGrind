@@ -1,1 +1,2 @@
-run = "python ./LeetCode/383-RansomNote/canConstruct.py"
+#run = "python ./LeetCode/383-RansomNote/canConstruct.py"
+run = "g++ ./LeetCode/67-AddBinary/addBinary.cpp -o main && ./main"
